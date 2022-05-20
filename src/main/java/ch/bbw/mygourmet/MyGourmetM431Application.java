@@ -8,6 +8,7 @@ public class MyGourmetM431Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MyGourmetM431Application.class, args);
+		//Test
 	}
 
 }
