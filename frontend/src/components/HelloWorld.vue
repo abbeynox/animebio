@@ -1,9 +1,7 @@
 <template>
-  <div class="hello">
-    <vs-button flat :active="active == 1" @click="active = 1">
-      Test Button
-    </vs-button>
-  </div>
+    <div class="center content-inputs">
+      <vs-input v-model="value" placeholder="Name" />
+    </div>
 </template>
 
 <script>
