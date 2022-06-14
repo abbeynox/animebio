@@ -1,32 +1,13 @@
 <template>
-    <div class="center content-inputs">
-      <vs-input v-model="value" placeholder="Name" />
-    </div>
+  <div>
+    <vs-button :active="active == 0" @click="active = 0"> Active </vs-button>
+    <vs-button :active="active == 1" @click="active = 1"> Default </vs-button>
+    <vs-button disabled>Disabled</vs-button>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
-  props: {
-    msg: String,
-  },
+    name: 'HelloWorld'
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
