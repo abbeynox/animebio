@@ -24,6 +24,12 @@ Zudem soll jeder (auch nicht eingeloggte User) die Möglichkeit haben, einen Ani
 #### Mockup Userprofil:
 
 ### Entscheiden ⚖
-Wir haben uns noch ein wenig mehr über unsere Idee recherchiert, und sind zum Schluss gekommen, dass es ein gutes und umsetzbares Projekt ist.
-Auch viel uns noch der Entscheid, welches Framework wir benutzen 
-sollten. Da Yao und Trinity ziemlich gut in Vue.js sind, entschieden wir uns drei, dass wir dieses Webframework verwenden werden. So lernt Andy auch noch was gutes dazu.
+Wir haben uns nach einiger Recherche dazu Entschieden, unter anderem folgende Technologien und Libraries zu verwenden:
+- ⬇️ Java SpringBoot
+- ⬆️ Vue.js
+- ⬆️ Vuesax (UI Library)
+
+
+⬆️: Frontend, ⬇️: Backend
+
+Das meiste wird bei uns im Frontend abspielen. 
