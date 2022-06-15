@@ -18,10 +18,12 @@ Anime Infos  | Detaillierte Angaben über Anime | /anime/:animename
 Zudem soll jeder (auch nicht eingeloggte User) die Möglichkeit haben, einen Anime zu "liken". Dies hat einen Einfluss auf den Rank des Animes. Ob man sich ein Userprofil erstellen kann, ist noch in Planung. 
 
 #### Mockup Startseite:
-
-#### Mockup Anime Infos:
+<img src="./img/Skizze-Startseite.jpg" width="50%">
 
 #### Mockup Userprofil:
+<img src="./img/Skizze-Profil.jpg" width="50%">
+
+#### Mockup Anime Infos:
 
 ### Entscheiden ⚖
 Wir haben uns nach einiger Recherche dazu Entschieden, unter anderem folgende Technologien und Libraries zu verwenden:
