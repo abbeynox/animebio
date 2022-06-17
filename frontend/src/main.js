@@ -10,7 +10,7 @@ Vue.use(VueRouter);
 
 Vue.use(Vuesax, {
   colors: { // TODO: Search for color guidelines -> Jade
-    primary:'#BC73FF', // YWK Purple
+    primary:'#420080', // YWK Purple
     success:'#15b75b', // Green
     danger:'#ff3300', // Red
     warning:'#ff8200', // Orange

@@ -1,19 +1,23 @@
 <template>
   <div id="app">
-    <navigationTop/>
-    <router-view />
+    <navigationTop />
+    <MainContainer>
+      <router-view />
+    </MainContainer>
   </div>
 </template>
 
 <script>
-import NavigationTop from './components/Navbar.vue';
+import NavigationTop from "./components/Navbar.vue";
+import MainContainer from "./containers/MainContainer.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    NavigationTop
-}
-}
+    NavigationTop,
+    MainContainer,
+  },
+};
 </script>
 
 <style>
