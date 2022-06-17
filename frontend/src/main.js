@@ -2,7 +2,11 @@ import 'vuesax/dist/vuesax.css'
 
 import App from './App.vue'
 import Vue from 'vue'
+import VueRouter from 'vue-router';
 import Vuesax from 'vuesax'
+import router from './routes/'
+
+Vue.use(VueRouter);
 
 Vue.use(Vuesax, {
   colors: { // TODO: Search for color guidelines -> Jade
@@ -17,5 +21,6 @@ Vue.use(Vuesax, {
 Vue.config.productionTip = false
 
 new Vue({
+  router,
   render: h => h(App)
 }).$mount('#app')

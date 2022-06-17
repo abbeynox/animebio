@@ -1,4 +1,4 @@
-# AnimeBio - M431 🍉🍭
+# MyAnimeList - M431 🍉🍭
 <img src="./img/animebio-logo.png" width="50" />
 Schulprojekt umgesetzt mit der Methode IPERKA.
 
