@@ -5,6 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 public class AnimeList {
+    int id;
     String name;
     String type;
     double score;
@@ -16,6 +17,14 @@ public class AnimeList {
     String genres;
     String themes;
     String demographic;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
