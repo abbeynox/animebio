@@ -55,3 +55,7 @@ Wir haben uns nach einiger Recherche dazu Entschieden, unter anderem folgende Te
 ⬆️: Frontend, ⬇️: Backend
 
 Das meiste wird bei uns im Frontend abspielen.
+
+### Realisierung 🔨
+Wir haben die Realisierung in einem separaten Markdown File dokumentiert. Dieses Lernjournal ist [hier](Lernjournal.md) verlinkt. 
+
