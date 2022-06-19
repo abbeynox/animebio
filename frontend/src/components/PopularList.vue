@@ -1,23 +1,19 @@
 <template>
-  <section-container>
+  <section-container sectionTitle="Popular" sectionIcon="bx bxs-hot">
     <vs-card-group>
-      <vs-card>
+      <vs-card v-for="anime in animes" :key="anime.id">
         <template #title>
-          <h3>{{ animeTitle }}</h3>
+          <h3>{{ anime.animeTitle }}</h3>
         </template>
         <template #img>
-          <img :src="`/foto${card}.png`" alt="" />
+          <img :src="anime.animeImg" alt="anime img" />
         </template>
         <template #text>
-          <p>{{ animeDescription }}</p>
+          <p>{{ anime.animeDescription }}</p>
         </template>
         <template #interactions>
           <vs-button danger icon>
             <i class="bx bx-heart"></i>
-          </vs-button>
-          <vs-button class="btn-chat" shadow primary>
-            <i class="bx bx-chat"></i>
-            <span class="span"> {{ animeScore }} </span>
           </vs-button>
         </template>
       </vs-card>
@@ -27,6 +23,8 @@
 
 <script>
 import SectionContainer from "../containers/SectionContainer.vue";
+import animes from "../mock-data/animes.js";
+
 export default {
   name: "PopularList",
   components: {
@@ -43,6 +41,11 @@ export default {
       required: true,
       default: "Description",
     },
+    animeImg: {
+      type: String,
+      required: true,
+      default: "http://localhost:8080/img/touka2.1221dd00.png",
+    },
     animeScore: {
       type: Number,
       required: true,
@@ -58,6 +61,11 @@ export default {
       required: true,
       default: 0,
     },
+  },
+  data: function () {
+    return {
+      animes: animes
+    };
   },
 };
 </script>
