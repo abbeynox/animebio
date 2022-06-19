@@ -1,17 +1,20 @@
 <template>
   <div>
-    <HelloWorld />
+    <WelcomeHero />
+    <PopularList />
   </div>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld.vue';
+import WelcomeHero from '../components/WelcomeHero.vue';
+import PopularList from '@/components/PopularList.vue';
 export default {
   name: "HomeView",
   title: "Home",
   components: {
-    HelloWorld
-  },
+    WelcomeHero,
+    PopularList
+},
 };
 </script>
 

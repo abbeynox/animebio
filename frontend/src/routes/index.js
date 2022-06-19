@@ -14,11 +14,6 @@ const routes = [
     name: "home",
     component: () => import("@/views/HomeView.vue"),
   },
-  {
-    path: "/migros",
-    name: "migros",
-    component: () => import("@/views/MigrosView.vue"),
-  }
 ];
 
 const router = new VueRouter({
