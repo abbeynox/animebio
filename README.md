@@ -1,6 +1,8 @@
-# MyAnimeList - M431 🍉🍭
-<img src="./img/animebio-logo.png" width="50" />
+# MyAnimeList - M431 🍉🍭<img src="./img/animebio-logo.png" width="25" />
+
 Schulprojekt umgesetzt mit der Methode IPERKA.
+
+**✒️[Hier geht es direkt zum Lernjournal](Lernjournal.md)**
 
 ## Vorgehen 🛠
 
