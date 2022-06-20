@@ -13,6 +13,7 @@
     "lodash.uniqueid": "^4.0.1",
     "stylus-loader": "^7.0.0",
     "vue": "^2.6.14",
+    "vue-axios": "^3.4.1",
     "vue-dark-mode-switch": "^1.1.0",
     "vue-page-title": "^1.2.10",
     "vuesax": "^4.0.1-alpha.25"
