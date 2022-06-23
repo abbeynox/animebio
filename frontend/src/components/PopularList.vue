@@ -1,11 +1,7 @@
 <template>
   <section-container sectionTitle="Popular" sectionIcon="bx bxs-hot">
     <vs-card-group>
-      <vs-card
-        v-for="anime in animes"
-        :key="anime.mal_id"
-        v-on:click="showDesc"
-      >
+      <vs-card v-for="anime in animes" :key="anime.mal_id" @click="goToAnime(anime.mal_id)">
         <template #title>
           <h3>{{ anime.title }}</h3>
         </template>
@@ -22,8 +18,12 @@
             <vs-button danger icon>
               <i class="bx bx-heart"></i>
             </vs-button>
+
             <template #tooltip> {{ anime.title }} speichern</template>
           </vs-tooltip>
+          <vs-button class="btn-chat">
+            <span class="span"> Mehr info </span>
+          </vs-button>
         </template>
       </vs-card>
     </vs-card-group>
@@ -54,6 +54,9 @@ export default {
     );
   },
   methods: {
+    goToAnime: function(id) {
+      location.href="/anime/" + id
+    },
     async loadAnimes() {
       this.loading = true;
       let apiUrl =
