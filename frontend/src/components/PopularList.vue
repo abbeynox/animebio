@@ -1,30 +1,48 @@
 <template>
   <section-container sectionTitle="Popular" sectionIcon="bx bxs-hot">
     <vs-card-group>
-      <vs-card v-for="anime in animes" :key="anime.mal_id">
+      <vs-card
+        v-for="anime in animes"
+        :key="anime.mal_id"
+        v-on:click="showDesc"
+      >
         <template #title>
           <h3>{{ anime.title }}</h3>
         </template>
         <template #img>
-          <img :src="anime.image_url" :alt="anime.title + ' img'" />
+          <img :src="anime.images.jpg.image_url" :alt="anime.title + ' img'" />
         </template>
         <template #text>
-          <p>{{ anime.background }}</p>
+          <p id="anime-description">
+            <span v-if="descOpened">{{ anime.background }}</span>
+          </p>
         </template>
         <template #interactions>
-          <vs-button danger icon>
-            <i class="bx bx-heart"></i>
-          </vs-button>
+          <vs-tooltip>
+            <vs-button danger icon>
+              <i class="bx bx-heart"></i>
+            </vs-button>
+            <template #tooltip> {{ anime.title }} speichern</template>
+          </vs-tooltip>
         </template>
       </vs-card>
-      
     </vs-card-group>
   </section-container>
 </template>
 
 <script>
 import SectionContainer from "../containers/SectionContainer.vue";
-//import animes from "../mock-data/animes.js";
+
+// var fullDescription = animes[1].background;
+
+// function showDescriptionPreview() {
+//   var prevDescription = fullDescription.substring(1, 30); // Hier ggf noch mehr anzeigen anhängen
+//   document.getElementById("anime-description").innerHTML = prevDescription;
+// }
+
+// function showMore() {
+//   document.getElementById("anime-description").innerHTML = fullDescription;
+// }
 
 export default {
   name: "PopularList",
@@ -50,11 +68,11 @@ export default {
     async loadAnimes() {
       this.loading = true;
       let apiUrl =
-        //process.env.VUE_APP_API_BASEURL + "/anime?order_by=popularity";
-        "https://api.jikan.moe/v4/anime?order_by=popularity?sort=desc";
+        process.env.VUE_APP_API_BASEURL + "/anime?order_by=popularity";
+      // "https://api.jikan.moe/v4/anime?order_by=popularity?sort=desc";
       try {
         let response = await this.axios.get(apiUrl);
-        this.animes = response.data;
+        this.animes = response.data.data;
       } catch (e) {
         console.log(e);
         this.error = true;
