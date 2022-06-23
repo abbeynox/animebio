@@ -33,17 +33,6 @@
 <script>
 import SectionContainer from "../containers/SectionContainer.vue";
 
-// var fullDescription = animes[1].background;
-
-// function showDescriptionPreview() {
-//   var prevDescription = fullDescription.substring(1, 30); // Hier ggf noch mehr anzeigen anhängen
-//   document.getElementById("anime-description").innerHTML = prevDescription;
-// }
-
-// function showMore() {
-//   document.getElementById("anime-description").innerHTML = fullDescription;
-// }
-
 export default {
   name: "PopularList",
   components: {
@@ -69,7 +58,6 @@ export default {
       this.loading = true;
       let apiUrl =
         process.env.VUE_APP_API_BASEURL + "/anime?order_by=popularity";
-      // "https://api.jikan.moe/v4/anime?order_by=popularity?sort=desc";
       try {
         let response = await this.axios.get(apiUrl);
         this.animes = response.data.data;
