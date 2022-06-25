@@ -2,7 +2,7 @@
   <div class="hero">
     <h1 class="hero-header">Willkommen bei MyAnimeList</h1>
     <div class="hero-image">
-      <img src="../../public/touka2.png" width="400px" alt="platzhalter">
+      <img src="../assets/touka2.png" width="400px" alt="platzhalter">
     </div>
 
   </div>

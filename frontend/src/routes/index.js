@@ -21,7 +21,7 @@ const routes = [
       const id = Number.parseInt(route.params.id);
       return { id };
     },
-  },
+  }
 ];
 
 const router = new VueRouter({
