@@ -1,11 +1,7 @@
 <template>
   <section-container sectionTitle="Popular" sectionIcon="bx bxs-hot">
     <vs-card-group>
-      <vs-card
-        v-for="anime in animes"
-        :key="anime.mal_id"
-        v-on:click="showDesc"
-      >
+      <vs-card v-for="anime in animes" :key="anime.mal_id">
         <template #title>
           <h3>{{ anime.title }}</h3>
         </template>
@@ -22,7 +18,19 @@
             <vs-button danger icon>
               <i class="bx bx-heart"></i>
             </vs-button>
+
             <template #tooltip> {{ anime.title }} speichern</template>
+          </vs-tooltip>
+          <vs-tooltip>
+          <vs-button
+            class="btn-chat"
+            :disabled="anime.synopsis === null"
+            @click="goToAnime(anime.mal_id)"
+          >
+            <span class="span"> Mehr Informationen </span>
+          </vs-button>
+           <template #tooltip v-if="anime.synopsis === null">Zu diesem Anime sind keine weiteren Informationen verfügbar</template>
+           <template #tooltip v-else>Mehr Infos zu {{anime.title}}</template>
           </vs-tooltip>
         </template>
       </vs-card>
@@ -54,10 +62,12 @@ export default {
     );
   },
   methods: {
+    goToAnime: function (id) {
+      location.href = "/anime/" + id;
+    },
     async loadAnimes() {
       this.loading = true;
-      let apiUrl =
-        process.env.VUE_APP_API_BASEURL + "/anime?order_by=popularity";
+      let apiUrl = process.env.VUE_APP_API_BASEURL + "/anime?order_by=rank";
       try {
         let response = await this.axios.get(apiUrl);
         this.animes = response.data.data;
@@ -66,30 +76,8 @@ export default {
         this.error = true;
       }
       this.loading = false;
-    },
-  },
-  /*
-  props: {
-    mal_id: {
-      type: Number,
-      required: true,
-    },
-    title: {
-      type: String,
-      required: true,
-      default: "Title",
-    },
-    background: {
-      type: String,
-      required: true,
-      default: "Background",
-    },
-    image_url: {
-      type: String,
-      required: true,
-      default: "http://localhost:8080/img/touka2.1221dd00.png",
-    },
-  },*/
+    }
+  }
 };
 </script>
 

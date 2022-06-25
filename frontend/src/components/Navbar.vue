@@ -10,8 +10,8 @@
     >
       <template #left>
         <span class="elementsInline"
-          ><img src="../../public/animebio-logo.png" alt="" width="30" />
-          <p>Animebio</p></span
+          ><img src="../assets/logo.png" alt="" width="30" />
+          <p>MyAnimeList</p></span
         >
       </template>
       <vs-navbar-item :active="active == 'home'" id="home">

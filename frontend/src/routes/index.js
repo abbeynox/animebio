@@ -4,9 +4,8 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-
 Vue.use(VuePageTitle, {
-  suffix: "🍭MyAnimeList", // Website Titel falls kein anderes gefunden wurde
+  suffix: "🍭MyAnimeList",
 });
 const routes = [
   {
@@ -14,6 +13,15 @@ const routes = [
     name: "home",
     component: () => import("@/views/HomeView.vue"),
   },
+  {
+    path: "/anime/:id",
+    name: "single anime",
+    component: () => import("@/views/AnimeInfoView.vue"),
+    props: (route) => {
+      const id = Number.parseInt(route.params.id);
+      return { id };
+    },
+  }
 ];
 
 const router = new VueRouter({
@@ -22,7 +30,7 @@ const router = new VueRouter({
   scrollBehavior() {
     return { x: 0, y: 0 };
   },
-  routes: routes
+  routes: routes,
 });
 
 export default router;
