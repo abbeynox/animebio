@@ -12,11 +12,11 @@ package ch.bbw.mygourmet;
 @Controller
 public class GourmetController {
 
-    /*@GetMapping("/")
-    private String editProfile(AnimeList animeList, Model model){
-        model.addAttribute("formula", animeList);
+    @GetMapping("/")
+    private String editProfile(Model model){
+        model.addAttribute("formula", select());
         return "index";
-    }*/
+    }
 
     @PostMapping("/result")
     private String results(@ModelAttribute AnimeList animeList, Model model){
@@ -24,18 +24,19 @@ public class GourmetController {
         return "result";
     }
 
-    @GetMapping( "/")
+    /*@GetMapping( "/")
     @ResponseBody
     public String select(Model model){
         return select();
-    }
+    }*/
 
-    /*@GetMapping("/api/v1/users/{id}")
+    @GetMapping("/select")
     @ResponseBody
     public String getOneUser(Model model, AnimeList animeList){
+        model.addAttribute("select", animeList);
         return select1(animeList.getId());
     }
-
+/*
     @PostMapping("/api/v1/users/")
     @ResponseStatus(code = HttpStatus.OK, reason = "OK")
     public void createUser(@RequestBody BlackboxModel blackboxModel){
@@ -101,7 +102,7 @@ public class GourmetController {
         return null;
     }
 
-    /*private String select1(int id){
+    private String select1(int id){
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/user_database", "root", "root");
@@ -194,5 +195,5 @@ public class GourmetController {
             e.printStackTrace();
         }
         return null;
-    }*/
+    }
 }
