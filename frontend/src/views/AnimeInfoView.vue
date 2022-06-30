@@ -16,16 +16,22 @@
       </div>
       <h4>
         {{ anime.aired.prop.from.year }}
-        <span class="duration">{{ anime.duration }}</span>
+        <span class="duration" v-if="anime.duration !== 'Unknown'">{{
+          anime.duration
+        }}</span>
       </h4>
     </div>
     <div class="anime-description">
-      <p v-if="anime.background !== null">
-        {{ anime.background }}
+      <p v-if="anime.synopsis !== null">
+        {{ anime.synopsis }}
       </p>
-      <p v-if="anime.background == null">
-      Zu diesem Anime ist keine Beschreibung verfügbar.</p>
+      <p v-if="anime.synopsis == null">
+        Zu diesem Anime ist keine Beschreibung verfügbar.
+      </p>
     </div>
+    <vs-button danger flat :active="active == 1" @click="active = 1">
+      <i class="bx bxs-heart"></i><span>Auf meine Liste</span>
+    </vs-button>
   </div>
 </template>
 
@@ -55,6 +61,12 @@ export default {
     );
   },
   methods: {
+    openLoading() {
+      const loading = this.$vs.loading();
+      setTimeout(() => {
+        loading.close();
+      }, 3000);
+    },
     async loadAnimeInfo() {
       let apiUrl =
         process.env.VUE_APP_API_BASEURL + "/anime/" + this.id + "/full";
@@ -62,7 +74,6 @@ export default {
         let response = await this.axios.get(apiUrl);
         this.anime = response.data.data;
         document.title = this.anime.title + "🍭MyAnimeList";
-        // this.apiLoaded = true;
       } catch (e) {
         console.log(e);
         this.error = true;
@@ -97,7 +108,12 @@ export default {
   display: inline-block;
 }
 .anime-genre .anime-genre-name {
-  padding-right: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 3px;
+  margin: 3px;
+  border-radius: 5px;
+  color: #fff;
+  background: #420080;
 }
 .duration {
   display: inline-block;

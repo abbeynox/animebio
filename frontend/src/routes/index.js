@@ -5,7 +5,7 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 Vue.use(VuePageTitle, {
-  suffix: "🍭MyAnimeList", // Website Titel falls kein anderes gefunden wurde
+  suffix: "🍭MyAnimeList",
 });
 const routes = [
   {
