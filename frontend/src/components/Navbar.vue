@@ -27,7 +27,7 @@
         Genre 🎭
       </vs-navbar-item>
       <template #right>
-        <vs-button animation-type="rotate">
+        <vs-button animation-type="rotate" href="/login">
           <i class="bx bx-user"></i>
           <template #animate> Login </template>
         </vs-button>
