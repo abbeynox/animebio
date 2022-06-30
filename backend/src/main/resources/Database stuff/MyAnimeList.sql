@@ -1,8 +1,6 @@
 CREATE TABLE UserProfile(
     id INT AUTO_INCREMENT PRIMARY KEY UNIQUE,
     user_name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    Animes VARCHAR(255),
     anime_list_idfs INT
 );
 
@@ -24,9 +22,5 @@ CREATE TABLE AnimeList(
 ALTER TABLE UserProfile
 ADD FOREIGN KEY (anime_list_idfs) REFERENCES AnimeList(id);
 
-LOAD DATA INFILE 'mal_top2000_anime.csv'
-INTO TABLE AnimeList
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 LINES;
+INSERT INTO UserProfile (user_name, Animes, anime_list_idfs)
+VALUE ('Loid_Forger', NULL, NULL);
