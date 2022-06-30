@@ -21,6 +21,20 @@ const routes = [
       const id = Number.parseInt(route.params.id);
       return { id };
     },
+  },
+  {
+    path: "/user/:id",
+    name: "single user",
+    component: () => import("@/views/UserView.vue"),
+    props: (route) => {
+      const id = Number.parseInt(route.params.id);
+      return { id };
+    },
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: () => import("@/views/LoginView.vue"),
   }
 ];
 

@@ -28,5 +28,3 @@ Heute war ich krank.
 > Trinity
 
 Ich habe weitere Assets (Icons und Bilder) für die Website gestaltet und in die Applikation eingebunden. 
-
-
