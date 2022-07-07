@@ -3,6 +3,7 @@
 Schulprojekt umgesetzt mit der Methode IPERKA.
 
 **✒️[Hier geht es direkt zum Lernjournal](Lernjournal.md)**
+**[Hier geht es zum API-Repository](https://github.com/Hoshiguru/animebio_api)
 
 ## Vorgehen 🛠
 
