@@ -69,7 +69,7 @@ export default {
     },
     async loadAnimeInfo() {
       let apiUrl =
-        process.env.VUE_APP_API_BASEURL + "/anime/" + this.id + "/full";
+        process.env.VUE_APP_ANIMEAPI_BASEURL + "/anime/" + this.id + "/full";
       try {
         let response = await this.axios.get(apiUrl);
         this.anime = response.data.data;

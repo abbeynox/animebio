@@ -15,7 +15,7 @@
         </template>
         <template #interactions>
           <vs-tooltip>
-            <vs-button danger icon>
+            <vs-button danger icon> <!-- Hier wird die ID ans Backend mitgeschickt-->
               <i class="bx bx-heart"></i>
             </vs-button>
 
@@ -67,7 +67,7 @@ export default {
     },
     async loadAnimes() {
       this.loading = true;
-      let apiUrl = process.env.VUE_APP_API_BASEURL + "/anime?order_by=rank";
+      let apiUrl = process.env.VUE_APP_ANIMEAPI_BASEURL + "/anime?order_by=rank";
       try {
         let response = await this.axios.get(apiUrl);
         this.animes = response.data.data;
