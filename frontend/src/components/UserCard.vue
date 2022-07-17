@@ -2,14 +2,15 @@
   <div class="card-container">
     <img
       class="round"
-      src="https://randomuser.me/api/portraits/women/79.jpg"
+      :src="'https://api.multiavatar.com/' + this.user.username + '.png?apikey=x5vsuy62F1RQwX'"
+      width="120px"
       alt="user"
     />
     <h3>{{ user.username }}</h3>
     <h6>Beigetreten am {{ dateTime(user.created_at) }}</h6>
     <p>{{ user.bio }}</p>
 
-    <div class="skills">
+    <div class="animes">
       <h6>Gespeicherte Anime</h6>
       <ul>
         <li>Attack on Titan</li>
@@ -27,6 +28,12 @@
 import moment from "moment";
 export default {
   name: "UserCard",
+  data() {
+    return {
+      avatar: String,
+    };
+  },
+
   methods: {
     dateTime(value) {
       return moment(value).format("DD. MMMM YYYY, HH:MM");
@@ -66,39 +73,24 @@ p {
 }
 
 .card-container .round {
-  border: 1px solid #03bfcb;
+  border: 1px solid #420080;
   border-radius: 50%;
   padding: 7px;
 }
 
-button.primary {
-  background-color: #03bfcb;
-  border: 1px solid #03bfcb;
-  border-radius: 3px;
-  color: #231e39;
-  font-family: Montserrat, sans-serif;
-  font-weight: 500;
-  padding: 10px 25px;
-}
-
-button.primary.ghost {
-  background-color: transparent;
-  color: #02899c;
-}
-
-.skills {
+.animes {
   text-align: left;
   padding: 15px;
   margin-top: 30px;
 }
 
-.skills ul {
+.animes ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.skills ul li {
+.animes ul li {
   border: 1px solid #2d2747;
   border-radius: 2px;
   display: inline-block;
