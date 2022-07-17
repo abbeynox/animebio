@@ -13,6 +13,7 @@
     "core-js": "^3.8.3",
     "dotenv": "^16.0.1",
     "lodash.uniqueid": "^4.0.1",
+    "moment": "^2.29.4",
     "stylus-loader": "^7.0.0",
     "vue": "^2.6.14",
     "vue-axios": "^3.4.1",

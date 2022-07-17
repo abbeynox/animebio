@@ -90,11 +90,11 @@ export default {
   display: block;
   width: 1000px;
   height: 400px;
-  margin: 80px auto;
+  margin: 100px auto;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0px 0px 120px -25px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(to top, #e5e6e6 50%, transparent 100%);
+  box-shadow: 0px 0px 150px -45px rgba(255, 0, 242, 0.5);
+  background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
 }
 .anime-header {
   text-align: left;
@@ -117,14 +117,15 @@ export default {
 }
 .duration {
   display: inline-block;
-  color: #555;
+  margin-top: 10px;
+  color: #fff;
+  padding: 5px;
   border-radius: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.13);
 }
 .anime-description {
   text-align: left;
+  color: #cfd6e1;
 }
 .anime-img {
   position: relative;
