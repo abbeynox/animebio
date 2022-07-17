@@ -1,11 +1,16 @@
 <template>
-  <div class="card-container">
-    <UserCard :user="user"/>
+  <div v-if="user.username !== null" class="card-container">
+    <UserCard :user="user" />
+  </div>
+  <div v-else>
+    <UserError />
   </div>
 </template>
 
 <script>
 import UserCard from "@/components/UserCard.vue";
+import UserError from "@/components/UserError.vue";
+
 export default {
   name: "UserInfoView",
   title: "User Info",
@@ -32,7 +37,6 @@ export default {
   methods: {
     async loadUserInfo() {
       let apiUrl = process.env.VUE_APP_USERAPI_BASEURL + "/user/" + this.id;
-      console.log(apiUrl);
       try {
         let response = await this.axios.get(apiUrl);
         this.user = response.data[0];
@@ -43,7 +47,7 @@ export default {
       }
     },
   },
-  components: { UserCard },
+  components: { UserCard, UserError },
 };
 </script>
 
