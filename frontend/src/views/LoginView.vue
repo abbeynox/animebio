@@ -9,7 +9,6 @@
 
       <vs-input
         type="password"
-        icon-after
         v-model="password"
         placeholder="Passwort"
       >
